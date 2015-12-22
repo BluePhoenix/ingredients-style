@@ -25,7 +25,10 @@ var ListManager = React.createClass({
         <List items={this.state.items} />
       </div>
     );
+  },
+  onChange: function(e) {
+    this.setState({newItemText: e.target.value});
   }
 });
 
-module.export = ListManager;
+module.exports = ListManager;
