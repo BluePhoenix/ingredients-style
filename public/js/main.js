@@ -19079,9 +19079,14 @@ var ListManager = React.createClass({
     this.setState({ items: currentItems, newItemText: '' });
   },
   render: function () {
+
+    var divStyle = {
+      marginTop: 10
+    };
+
     return React.createElement(
       'div',
-      { className: 'col-sm-4' },
+      { style: divStyle, className: 'col-sm-4' },
       React.createElement(
         'div',
         { className: 'panel panel-primary' },
@@ -19098,24 +19103,32 @@ var ListManager = React.createClass({
           'div',
           { className: 'panel-body' },
           React.createElement(
-            'form',
-            { onSubmit: this.handleSubmit },
+            'div',
+            { className: 'row' },
             React.createElement(
-              'div',
-              { className: 'col-sm-8' },
-              React.createElement('input', { className: 'form-control', onChange: this.onChange, value: this.state.newItemText })
-            ),
-            React.createElement(
-              'div',
-              { className: 'col-sm-4' },
+              'form',
+              { onSubmit: this.handleSubmit },
               React.createElement(
-                'button',
-                { className: 'btn btn-primary' },
-                'Add'
+                'div',
+                { className: 'col-sm-8' },
+                React.createElement('input', { className: 'form-control', onChange: this.onChange, value: this.state.newItemText })
+              ),
+              React.createElement(
+                'div',
+                { className: 'col-sm-4' },
+                React.createElement(
+                  'button',
+                  { className: 'btn btn-primary' },
+                  'Add'
+                )
               )
             )
           ),
-          React.createElement(List, { items: this.state.items })
+          React.createElement(
+            'div',
+            { className: 'row>' },
+            React.createElement(List, { items: this.state.items })
+          )
         )
       )
     );
