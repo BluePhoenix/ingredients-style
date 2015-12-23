@@ -19100,10 +19100,10 @@ var ListManager = React.createClass({
           React.createElement(
             'form',
             { onSubmit: this.handleSubmit },
-            React.createElement('input', { onChange: this.onChange, value: this.state.newItemText }),
+            React.createElement('input', { className: 'form-control', onChange: this.onChange, value: this.state.newItemText }),
             React.createElement(
               'button',
-              null,
+              { className: 'btn btn-primary' },
               'Add'
             )
           ),

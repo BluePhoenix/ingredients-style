@@ -23,8 +23,8 @@ var ListManager = React.createClass({
           </div>
           <div className="panel-body">
             <form onSubmit={this.handleSubmit}>
-              <input onChange={this.onChange} value={this.state.newItemText} />
-              <button>Add</button>
+              <input className="form-control" onChange={this.onChange} value={this.state.newItemText} />
+              <button className="btn btn-primary">Add</button>
             </form>
             <List items={this.state.items} />
           </div>
