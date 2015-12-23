@@ -19084,6 +19084,12 @@ var ListManager = React.createClass({
       marginTop: 10
     };
 
+    var headingStyle = {};
+
+    if (this.props.headingColor) {
+      headingStyle.background = this.props.headingColor;
+    }
+
     return React.createElement(
       'div',
       { style: divStyle, className: 'col-sm-4' },
@@ -19092,7 +19098,7 @@ var ListManager = React.createClass({
         { className: 'panel panel-primary' },
         React.createElement(
           'div',
-          { className: 'panel-heading' },
+          { style: headingStyle, className: 'panel-heading' },
           React.createElement(
             'h3',
             null,
@@ -19148,6 +19154,6 @@ var ListManager = require('./components/ListManager.jsx');
 
 ReactDOM.render(React.createElement(ListManager, { title: 'Ingredients' }), document.getElementById('ingredients'));
 ReactDOM.render(React.createElement(ListManager, { title: 'To Do List' }), document.getElementById('todo'));
-ReactDOM.render(React.createElement(ListManager, { title: 'Wish List' }), document.getElementById('wishlist'));
+ReactDOM.render(React.createElement(ListManager, { title: 'Wish List', headingColor: '#9d2394' }), document.getElementById('wishlist'));
 
 },{"./components/ListManager.jsx":161,"react":158,"react-dom":29}]},{},[162]);
