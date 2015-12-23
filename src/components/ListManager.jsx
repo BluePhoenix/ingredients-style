@@ -17,14 +17,18 @@ var ListManager = React.createClass({
   render: function() {
     return (
       <div className="col-sm-4">
-        <div className="panel panel-default">
+        <div className="panel panel-primary">
           <div className="panel-heading">
             <h3>{this.props.title}</h3>
           </div>
           <div className="panel-body">
             <form onSubmit={this.handleSubmit}>
-              <input className="form-control" onChange={this.onChange} value={this.state.newItemText} />
-              <button className="btn btn-primary">Add</button>
+              <div className="col-sm-8">
+                <input className="form-control" onChange={this.onChange} value={this.state.newItemText} />
+              </div>
+              <div className="col-sm-4">
+                <button className="btn btn-primary">Add</button>
+              </div>
             </form>
             <List items={this.state.items} />
           </div>

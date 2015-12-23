@@ -19084,7 +19084,7 @@ var ListManager = React.createClass({
       { className: 'col-sm-4' },
       React.createElement(
         'div',
-        { className: 'panel panel-default' },
+        { className: 'panel panel-primary' },
         React.createElement(
           'div',
           { className: 'panel-heading' },
@@ -19100,11 +19100,19 @@ var ListManager = React.createClass({
           React.createElement(
             'form',
             { onSubmit: this.handleSubmit },
-            React.createElement('input', { className: 'form-control', onChange: this.onChange, value: this.state.newItemText }),
             React.createElement(
-              'button',
-              { className: 'btn btn-primary' },
-              'Add'
+              'div',
+              { className: 'col-sm-8' },
+              React.createElement('input', { className: 'form-control', onChange: this.onChange, value: this.state.newItemText })
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-sm-4' },
+              React.createElement(
+                'button',
+                { className: 'btn btn-primary' },
+                'Add'
+              )
             )
           ),
           React.createElement(List, { items: this.state.items })
