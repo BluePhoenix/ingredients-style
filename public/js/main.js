@@ -19081,23 +19081,35 @@ var ListManager = React.createClass({
   render: function () {
     return React.createElement(
       'div',
-      null,
+      { className: 'col-sm-4' },
       React.createElement(
-        'h3',
-        null,
-        this.props.title
-      ),
-      React.createElement(
-        'form',
-        { onSubmit: this.handleSubmit },
-        React.createElement('input', { onChange: this.onChange, value: this.state.newItemText }),
+        'div',
+        { className: 'panel panel-default' },
         React.createElement(
-          'button',
-          null,
-          'Add'
+          'div',
+          { className: 'panel-heading' },
+          React.createElement(
+            'h3',
+            null,
+            this.props.title
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'panel-body' },
+          React.createElement(
+            'form',
+            { onSubmit: this.handleSubmit },
+            React.createElement('input', { onChange: this.onChange, value: this.state.newItemText }),
+            React.createElement(
+              'button',
+              null,
+              'Add'
+            )
+          ),
+          React.createElement(List, { items: this.state.items })
         )
-      ),
-      React.createElement(List, { items: this.state.items })
+      )
     );
   },
   onChange: function (e) {
